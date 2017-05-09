@@ -1,0 +1,12 @@
+#+ summary: Get all LDT concept using LDT SPARQL endpoint
+#+ endpoint: https://data.acceptatie.pdok.nl/catalogus/dso/sparql
+#+ method: GET
+#+ pagination: 50
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?s ?p ?o
+WHERE {
+	?s ?p ?o.
+	?s rdf:type skos:Concept .
+}
+ORDER BY ?s ?p ?o
